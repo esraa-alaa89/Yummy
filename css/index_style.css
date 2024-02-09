@@ -1,0 +1,167 @@
+:root{
+    /* --main-color: black; */
+    --main-color: black;
+}
+body{
+    background: var(--main-color);
+    font-family: 'Segoe UI Light', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Loading icon */
+.loading{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    overflow: hidden;
+    z-index: 9999999999999999999999999999;
+}
+.loader {
+    position: relative;
+    width: 108px;
+    display: flex;
+    justify-content: space-between;
+}
+.loader::after , .loader::before  {
+    content: '';
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: #FFF;
+    background-image:  radial-gradient(circle 14px, #0d161b 100%, transparent 0);
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    animation: eyeMove 10s infinite , blink 10s infinite;
+}
+@keyframes eyeMove {
+    0%  , 10% {     background-position: 0px 0px}
+    13%  , 40% {     background-position: -15px 0px}
+    43%  , 70% {     background-position: 15px 0px}
+    73%  , 90% {     background-position: 0px 15px}
+    93%  , 100% {     background-position: 0px 0px}
+}
+@keyframes blink {
+    0%  , 10% , 12% , 20%, 22%, 40%, 42% , 60%, 62%,  70%, 72% , 90%, 92%, 98% , 100%
+    { height: 48px}
+    11% , 21% ,41% , 61% , 71% , 91% , 99%
+    { height: 18px}
+}
+  
+
+/* Navigation */
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999999;
+}
+nav i, nav img{
+    cursor: pointer;
+}
+nav .navList{
+    background-color: black;
+}
+nav .navList ul{
+    margin-top: 36px;
+    margin-right: 33px;
+}
+nav .navList ul li{
+    padding: 0 33px 18px 33px;
+    transition: all 0.5s;
+}
+nav .navList .nav-social-icon{
+    margin-left: 33px;
+    color: #fff;
+}
+nav .navList .nav-social-icon i{
+    font-size: 16px;
+    opacity: 0.2;
+    transition: all 0.5s;
+}
+nav .navList .nav-social-icon i:hover, nav .navList ul li a{
+    color: #fff;
+    opacity: 1;
+}
+nav .navClick img{
+    width: 32px;
+}
+nav .navClick i{
+    font-size: 23px;
+}
+
+/* Home */
+
+/* Meals */
+.display-meals{
+    padding: 40px 10px;
+}
+.display-meals .meal-data{
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    margin-top: 40px;
+    margin-right: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.display-meals .meal-data i{
+    font-size: 40px;
+}
+.display-meals .meal-overlay{
+    position: absolute;
+    top: 110%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+.meal-data:hover .meal-overlay{
+    top: 0;
+}
+
+/* Search */
+input{
+    width: 90% !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    margin: 20px;
+    margin-top: 40px;
+    border: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,.7) !important;
+    font-weight: 800;
+    box-shadow: 0 .5rem 1rem rgba(255,255,255,.1)!important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Contact */
+.contact{
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+.contact img{
+    width: 7%;
+    padding-top: 28px;
+    align-self: center;
+}
